@@ -20,7 +20,7 @@ export default function Header() {
     <header className="bg-[#1c2333] text-white sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex flex-col leading-none hover:opacity-70 transition-opacity">
-          <span className="text-[10px] tracking-[0.25em] text-[#b8903a] font-light">NISHIMIYA AIKIDO</span>
+          <span className="text-[10px] tracking-[0.25em] text-[#b8903a] font-light">NISHINOMIYA AIKIDO</span>
           <span className="text-base font-medium tracking-wider mt-0.5">西宮合氣道同好会</span>
         </Link>
 

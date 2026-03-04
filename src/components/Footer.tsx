@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <p className="text-[10px] tracking-[0.25em] text-[#b8903a] mb-2">NISHIMIYA AIKIDO</p>
+            <p className="text-[10px] tracking-[0.25em] text-[#b8903a] mb-2">NISHINOMIYA AIKIDO</p>
             <h3 className="text-white text-lg font-medium tracking-wider mb-4">西宮合氣道同好会</h3>
             <p className="text-sm leading-relaxed text-slate-400">
               西宮市で合氣道を稽古する仲間たちの会です。<br />

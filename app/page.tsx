@@ -11,7 +11,7 @@ export default function Home() {
         <HeroSlideshow />
         <div className="absolute inset-0 bg-[#0f1520]/65"></div>
         <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <p className="text-[10px] tracking-[0.4em] text-[#d4a853] mb-8">NISHIMIYA AIKIDO</p>
+          <p className="text-[10px] tracking-[0.4em] text-[#d4a853] mb-8">NISHINOMIYA AIKIDO</p>
           <h1 className="text-5xl md:text-7xl font-medium text-white leading-tight tracking-wider mb-8">
             西宮で、<br />
             はじめての<br className="sm:hidden" /><span className="whitespace-nowrap">合氣道。</span>
