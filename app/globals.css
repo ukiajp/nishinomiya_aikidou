@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-cream: #faf8f5;
+  --color-cream-dark: #f0ece4;
+  --color-ink: #1c1c1c;
+  --color-ink-light: #5a5a5a;
+  --color-gold: #b8903a;
+  --color-gold-light: #d4a853;
+  --color-border: #e2dcd2;
+  --font-serif: var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #faf8f5;
+  color: #1c1c1c;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", "HGS明朝E", serif;
+}
+
+/* 活動報告 本文スタイル */
+.prose-aikido {
+  color: #1c1c1c;
+  font-size: 0.95rem;
+  line-height: 2;
+}
+.prose-aikido p {
+  margin-bottom: 1.6em;
+}
+.prose-aikido h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #e2dcd2;
+  color: #1c1c1c;
+}
+.prose-aikido blockquote {
+  border-left: 3px solid #b8903a;
+  padding-left: 1.25em;
+  color: #5a5a5a;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+.prose-aikido ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.6em;
+}
+.prose-aikido ul li::before {
+  content: "—";
+  color: #b8903a;
+  margin-right: 0.75em;
+}
+.prose-aikido a {
+  color: #b8903a;
+  text-decoration: underline;
 }
