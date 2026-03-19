@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import { getAllPosts, formatDate } from "@/lib/posts";
 
@@ -26,6 +27,17 @@ export default function PostsPage() {
               {posts.map((post) => (
                 <article key={post.slug} className="py-10">
                   <Link href={`/posts/${post.slug}`} className="group block">
+                    {post.image && (
+                      <div className="relative aspect-[16/7] overflow-hidden mb-6">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          style={{ objectFit: "cover", objectPosition: "center 40%" }}
+                          quality={80}
+                        />
+                      </div>
+                    )}
                     <time className="text-[9px] tracking-[0.3em] text-[#b8903a]">
                       {formatDate(post.date)}
                     </time>
@@ -37,7 +49,7 @@ export default function PostsPage() {
                         {post.description}
                       </p>
                     )}
-                    <span className="inline-block mt-5 text-[9px] tracking-[0.25em] text-[#b8903a] group-hover:opacity-60 transition-opacity">
+                    <span className="inline-block mt-6 border border-[#b8903a] text-[#b8903a] group-hover:bg-[#b8903a] group-hover:text-white px-6 py-3 text-xs tracking-[0.2em] transition-colors">
                       続きを読む →
                     </span>
                   </Link>

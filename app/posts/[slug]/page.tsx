@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPost, formatDate } from "@/lib/posts";
 
@@ -40,6 +41,19 @@ export default async function PostPage({ params }: Props) {
           <div className="w-8 h-px bg-[#b8903a] mt-6"></div>
         </div>
       </section>
+
+      {/* ヒーロー画像 */}
+      {post.image && (
+        <div className="relative aspect-[16/6] overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            style={{ objectFit: "cover", objectPosition: "center 40%" }}
+            quality={85}
+          />
+        </div>
+      )}
 
       {/* 本文 */}
       <section className="bg-[#faf8f5] py-20">

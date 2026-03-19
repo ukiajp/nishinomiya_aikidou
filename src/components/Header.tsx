@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/about", label: "合氣道について" },
   { href: "/activity", label: "活動紹介" },
+  { href: "/schedule", label: "稽古日程" },
   { href: "/posts", label: "活動報告" },
   { href: "/join", label: "入会案内" },
   { href: "/contact", label: "お問い合わせ" },

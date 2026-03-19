@@ -64,8 +64,8 @@ export default function ActivityPage() {
           {/* メイン写真 */}
           <div className="relative aspect-[16/7] overflow-hidden mb-4">
             <Image
-              src="/images/training-throw.jpg"
-              alt="道場長による投げ技の稽古"
+              src="/images/training-throw-2.jpg"
+              alt="投げ技の稽古"
               fill
               style={{ objectFit: "cover", objectPosition: "center 40%" }}
               quality={90}
@@ -75,7 +75,7 @@ export default function ActivityPage() {
           <div className="grid grid-cols-3 gap-4">
             {[
               { src: "/images/practice-1.jpg", alt: "稽古風景" },
-              { src: "/images/practice-2.jpg", alt: "技の稽古" },
+              { src: "/images/practice-4.jpg", alt: "稽古風景" },
               { src: "/images/veteran.jpg", alt: "ベテラン会員の指導" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
@@ -102,8 +102,8 @@ export default function ActivityPage() {
           </div>
           <div className="border border-[#e2dcd2] divide-y divide-[#e2dcd2]">
             {[
-              { day: "〇曜日", time: "○○:○○ – ○○:○○", venue: "西宮市内（要確認）" },
-              { day: "〇曜日", time: "○○:○○ – ○○:○○", venue: "西宮市内（要確認）" },
+              { day: "土曜日", time: "13:00 – 15:00", venue: "西宮市立中央体育館 武道場" },
+              { day: "日曜日", time: "9:00 – 11:00", venue: "西宮市立中央体育館 武道場" },
             ].map((row, i) => (
               <div key={i} className="grid grid-cols-3 text-sm">
                 <div className="px-8 py-6 border-r border-[#e2dcd2]">
@@ -138,9 +138,9 @@ export default function ActivityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="divide-y divide-[#e2dcd2]">
               {[
-                { en: "ADDRESS", ja: "稽古場所", val: "西宮市内（詳細はお問い合わせください）" },
-                { en: "STATION", ja: "最寄り駅", val: "〇〇駅 徒歩〇分（要確認）" },
-                { en: "PARKING", ja: "駐車場", val: "要確認" },
+                { en: "ADDRESS", ja: "稽古場所", val: "西宮市立中央体育館 武道場" },
+                { en: "STATION", ja: "最寄り駅", val: "阪急西宮北口駅 徒歩約20分 / JR西宮駅 徒歩約20分" },
+                { en: "PARKING", ja: "駐車場", val: "詳細はお問い合わせください" },
               ].map((item) => (
                 <div key={item.en} className="py-6">
                   <p className="text-[9px] tracking-[0.2em] text-[#b8903a] mb-2">{item.en}</p>

@@ -6,13 +6,37 @@ export const metadata: Metadata = {
   description: "体験稽古の申込み・見学・入会に関するお問い合わせはこちらから。",
 };
 
-export default function ContactPage() {
+type Props = { searchParams: Promise<{ date?: string; time?: string }> };
+
+function formatDateJa(dateStr: string) {
+  const [y, m, d] = dateStr.split("-").map(Number);
+  return `${y}年${m}月${d}日`;
+}
+
+export default async function ContactPage({ searchParams }: Props) {
+  const { date, time } = await searchParams;
+  const hasDate = !!date && !!time;
+  const defaultMessage = hasDate
+    ? `${formatDateJa(date!)}（${time}）の体験稽古を希望します。`
+    : "";
+
   return (
     <>
       <PageHeader en="CONTACT" ja="お問い合わせ" />
 
       <section className="bg-[#faf8f5] py-24">
         <div className="max-w-2xl mx-auto px-6">
+
+          {/* カレンダーから来た場合のバナー */}
+          {hasDate && (
+            <div className="bg-[#b8903a] px-8 py-5 mb-8">
+              <p className="text-[9px] tracking-[0.3em] text-white/70 mb-1">SELECTED DATE</p>
+              <p className="text-white font-medium tracking-wider">
+                {formatDateJa(date!)}　{time}
+              </p>
+            </div>
+          )}
+
           <div className="bg-[#1c2333] px-8 py-6 mb-12">
             <p className="text-[9px] tracking-[0.3em] text-[#b8903a] mb-3">TRIAL LESSON</p>
             <p className="text-white text-sm leading-loose">
@@ -25,6 +49,15 @@ export default function ContactPage() {
             method="POST"
             className="space-y-8"
           >
+            {/* カレンダーで選んだ日付を隠しフィールドで送信 */}
+            {hasDate && (
+              <input
+                type="hidden"
+                name="practice_date"
+                value={`${formatDateJa(date!)}（${time}）`}
+              />
+            )}
+
             {[
               { id: "name", label: "お名前", type: "text", required: true, placeholder: "山田 太郎" },
               { id: "email", label: "メールアドレス", type: "email", required: true, placeholder: "example@email.com" },
@@ -60,6 +93,7 @@ export default function ContactPage() {
                 id="type"
                 name="type"
                 required
+                defaultValue={hasDate ? "trial" : ""}
                 className="w-full border-b border-[#e2dcd2] bg-transparent py-3 text-[#1c1c1c] text-sm focus:outline-none focus:border-[#b8903a] transition-colors appearance-none"
               >
                 <option value="">選択してください</option>
@@ -77,6 +111,7 @@ export default function ContactPage() {
                 id="message"
                 name="message"
                 rows={5}
+                defaultValue={defaultMessage}
                 placeholder="ご質問・ご要望などをご記入ください"
                 className="w-full border-b border-[#e2dcd2] bg-transparent py-3 text-[#1c1c1c] text-sm placeholder:text-[#c0bbb4] focus:outline-none focus:border-[#b8903a] transition-colors resize-none"
               />
@@ -107,9 +142,9 @@ export default function ContactPage() {
           </div>
           <div className="divide-y divide-[#e2dcd2]">
             {[
-              { en: "ADDRESS", val: "西宮市内（詳細はお問い合わせください）" },
-              { en: "STATION", val: "〇〇駅 徒歩〇分（要確認）" },
-              { en: "SCHEDULE", val: "週2回（日時は要確認）" },
+              { en: "ADDRESS", val: "西宮市立中央体育館 武道場" },
+              { en: "STATION", val: "阪急西宮北口駅 徒歩約20分 / JR西宮駅 徒歩約20分" },
+              { en: "SCHEDULE", val: "土曜 13:00–15:00 / 日曜 9:00–11:00（月2〜3回）" },
             ].map((item) => (
               <div key={item.en} className="py-6 flex gap-8">
                 <span className="text-[9px] tracking-[0.2em] text-[#b8903a] w-20 flex-shrink-0 mt-0.5">{item.en}</span>

@@ -32,9 +32,9 @@ const steps = [
 ];
 
 const fees = [
-  { en: "ADMISSION", ja: "入会金", amount: "〇〇〇〇円", note: "初回のみ" },
-  { en: "MONTHLY", ja: "月会費", amount: "〇〇〇〇円", note: "毎月" },
-  { en: "UNIFORM", ja: "道着代", amount: "〇〇〇〇円〜", note: "購入時のみ" },
+  { en: "ADMISSION", ja: "入会金", amount: "なし", note: "" },
+  { en: "MONTHLY", ja: "月会費", amount: "5,300円", note: "毎月" },
+  { en: "UNIFORM", ja: "道着代", amount: "別途ご案内", note: "購入時のみ" },
 ];
 
 const faqs = [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
 
@@ -72,6 +73,52 @@ export default function AboutPage() {
                 <h3 className="text-lg font-medium text-[#1c1c1c] tracking-wider mb-4">{f.ja}</h3>
                 <div className="w-5 h-px bg-[#e2dcd2] mb-5"></div>
                 <p className="text-[#5a5a5a] text-sm leading-loose">{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 同好会の歴史 */}
+      <section className="bg-white py-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-[10px] tracking-[0.35em] text-[#b8903a] mb-4">HISTORY</p>
+            <h2 className="text-2xl md:text-3xl font-medium text-[#1c1c1c] tracking-wider">
+              同好会について
+            </h2>
+            <div className="w-8 h-px bg-[#b8903a] mx-auto mt-6"></div>
+          </div>
+          <div className="divide-y divide-[#e2dcd2] mb-16">
+            {[
+              { year: "1983", label: "昭和58年", body: "森正輝先生によって西宮合氣道同好会を創立。" },
+              { year: "2011", label: "平成23年", body: "大阪合気会から独立。" },
+              { year: "2012", label: "平成24年", body: "野村先生率いる「和心会合氣道」の傘下道場として再スタート。道場長・西口一馬のもと、現在に至る。" },
+            ].map((item) => (
+              <div key={item.year} className="py-8 flex gap-10 items-start">
+                <div className="flex-shrink-0 w-20 text-right">
+                  <p className="text-[#b8903a] text-sm font-medium">{item.year}</p>
+                  <p className="text-[#5a5a5a] text-[10px] tracking-wide mt-1">{item.label}</p>
+                </div>
+                <div className="flex-1 pt-0.5">
+                  <p className="text-[#1c1c1c] text-sm leading-loose">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* 道場長 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {[
+              { src: "/images/sensei-mori.jpg", name: "森 正輝", title: "初代道場長", desc: "昭和58年に西宮合氣道同好会を創立。", position: "center center" },
+              { src: "/images/sensei-nishiguchi.jpg", name: "西口 一馬", title: "三代目道場長", desc: "和心会合氣道の傘下として道場を率いる現道場長。フランス・スイスへの指導遠征も経験。", position: "center top" },
+            ].map((s) => (
+              <div key={s.name}>
+                <div className="relative aspect-[4/3] overflow-hidden mb-6">
+                  <Image src={s.src} alt={s.name} fill style={{ objectFit: "cover", objectPosition: s.position }} quality={85} />
+                </div>
+                <p className="text-[9px] tracking-[0.2em] text-[#b8903a] mb-2">{s.title}</p>
+                <p className="text-lg font-medium text-[#1c1c1c] tracking-wider mb-3">{s.name}</p>
+                <p className="text-[#5a5a5a] text-sm leading-loose">{s.desc}</p>
               </div>
             ))}
           </div>

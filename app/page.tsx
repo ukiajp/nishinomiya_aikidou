@@ -29,7 +29,7 @@ export default function Home() {
               無料体験を申し込む
             </Link>
             <Link
-              href="/activity"
+              href="/schedule"
               className="border border-white/40 hover:border-white text-white/80 hover:text-white px-10 py-4 tracking-widest text-sm transition-colors"
             >
               稽古日程を確認する
@@ -97,9 +97,9 @@ export default function Home() {
                 body: "体格や体力に関わらず技が活きる武道です。自分のペースで、無理なく続けられます。",
               },
               {
-                en: "WEST NISHINOMIYA",
-                ja: "通いやすい場所",
-                body: "西宮市内で週2回稽古しています。仕事帰りや週末にも無理なく通えます。",
+                en: "INTERNATIONAL",
+                ja: "国際的なつながり",
+                body: "道場長はフランス・スイスへの指導遠征を経験。世界につながる合氣道を、西宮から学べます。",
               },
             ].map((f) => (
               <div key={f.en} className="bg-[#faf8f5] p-10 md:p-12">
@@ -163,15 +163,16 @@ export default function Home() {
             <div className="flex items-baseline px-8 py-6">
               <span className="text-[9px] tracking-[0.2em] text-[#b8903a] w-32 flex-shrink-0">DAY / TIME</span>
               <span className="text-[#1c1c1c] text-sm leading-loose">
-                毎週〇曜日・〇曜日<br />
-                <span className="text-[#5a5a5a] text-xs">○○:○○ – ○○:○○（詳細は要確認）</span>
+                土曜日 13:00 – 15:00<br />
+                日曜日 9:00 – 11:00<br />
+                <span className="text-[#5a5a5a] text-xs">月2〜3回開催。日程は変更になる場合があります。</span>
               </span>
             </div>
             <div className="flex items-baseline px-8 py-6">
               <span className="text-[9px] tracking-[0.2em] text-[#b8903a] w-32 flex-shrink-0">VENUE</span>
               <span className="text-[#1c1c1c] text-sm">
-                西宮市内<br />
-                <span className="text-[#5a5a5a] text-xs">（詳細はお問い合わせください）</span>
+                西宮市立中央体育館 武道場<br />
+                <span className="text-[#5a5a5a] text-xs">阪急西宮北口駅 / JR西宮駅 各徒歩約20分</span>
               </span>
             </div>
           </div>
