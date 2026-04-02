@@ -33,7 +33,7 @@ export default function PostsPage() {
                           src={post.image}
                           alt={post.title}
                           fill
-                          style={{ objectFit: "cover", objectPosition: "center 40%" }}
+                          style={{ objectFit: "cover", objectPosition: "center top" }}
                           quality={80}
                         />
                       </div>

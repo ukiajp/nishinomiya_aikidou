@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Noto_Serif_JP } from "next/font/google";
+import { Shippori_Mincho } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const notoSerifJP = Noto_Serif_JP({
+const shipporiMincho = Shippori_Mincho({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
-  variable: "--font-noto-serif-jp",
+  variable: "--font-shippori-mincho",
   display: "swap",
 });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={notoSerifJP.variable}>
+    <html lang="ja" className={shipporiMincho.variable}>
       <body className="antialiased">
         <Header />
         <main>{children}</main>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
@@ -37,10 +38,17 @@ const fees = [
   { en: "UNIFORM", ja: "道着代", amount: "別途ご案内", note: "購入時のみ" },
 ];
 
-const faqs = [
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "体験稽古の申込み方法は？",
-    a: "お問い合わせページのフォームからご連絡ください。折り返し稽古日程をご案内します。",
+    a: (
+      <>
+        <Link href="/schedule" className="text-[#b8903a] underline hover:opacity-70 transition-opacity">稽古日程カレンダー</Link>
+        で参加したい日程を確認のうえ、
+        <Link href="/contact" className="text-[#b8903a] underline hover:opacity-70 transition-opacity">お問い合わせフォーム</Link>
+        からお申し込みください。
+      </>
+    ),
   },
   {
     q: "道着はどこで買えますか？",

@@ -49,7 +49,7 @@ export default async function PostPage({ params }: Props) {
             src={post.image}
             alt={post.title}
             fill
-            style={{ objectFit: "cover", objectPosition: "center 40%" }}
+            style={{ objectFit: "cover", objectPosition: "center top" }}
             quality={85}
           />
         </div>

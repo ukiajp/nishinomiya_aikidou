@@ -45,10 +45,12 @@ export default async function ContactPage({ searchParams }: Props) {
           </div>
 
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="https://submit-form.com/S08IfM2Zl"
             method="POST"
             className="space-y-8"
           >
+            <input type="hidden" name="_redirect" value="https://nishinomiya-aikidou.vercel.app/contact/thanks" />
+
             {/* カレンダーで選んだ日付を隠しフィールドで送信 */}
             {hasDate && (
               <input

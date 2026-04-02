@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
 
@@ -94,36 +95,20 @@ export default function ActivityPage() {
 
       {/* スケジュール */}
       <section className="bg-[#faf8f5] py-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-[10px] tracking-[0.35em] text-[#b8903a] mb-4">SCHEDULE</p>
-            <h2 className="text-2xl md:text-3xl font-medium text-[#1c1c1c] tracking-wider">稽古スケジュール</h2>
-            <div className="w-8 h-px bg-[#b8903a] mx-auto mt-6"></div>
-          </div>
-          <div className="border border-[#e2dcd2] divide-y divide-[#e2dcd2]">
-            {[
-              { day: "土曜日", time: "13:00 – 15:00", venue: "西宮市立中央体育館 武道場" },
-              { day: "日曜日", time: "9:00 – 11:00", venue: "西宮市立中央体育館 武道場" },
-            ].map((row, i) => (
-              <div key={i} className="grid grid-cols-3 text-sm">
-                <div className="px-8 py-6 border-r border-[#e2dcd2]">
-                  <p className="text-[9px] tracking-[0.2em] text-[#b8903a] mb-2">DAY</p>
-                  <p className="text-[#1c1c1c] font-medium">{row.day}</p>
-                </div>
-                <div className="px-8 py-6 border-r border-[#e2dcd2]">
-                  <p className="text-[9px] tracking-[0.2em] text-[#b8903a] mb-2">TIME</p>
-                  <p className="text-[#1c1c1c]">{row.time}</p>
-                </div>
-                <div className="px-8 py-6">
-                  <p className="text-[9px] tracking-[0.2em] text-[#b8903a] mb-2">VENUE</p>
-                  <p className="text-[#1c1c1c]">{row.venue}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-xs text-[#5a5a5a] mt-4 tracking-wide">
-            ※稽古日・時間・場所は変更になる場合があります。詳細はお問い合わせください。
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-[10px] tracking-[0.35em] text-[#b8903a] mb-4">SCHEDULE</p>
+          <h2 className="text-2xl md:text-3xl font-medium text-[#1c1c1c] tracking-wider mb-6">稽古日程</h2>
+          <div className="w-8 h-px bg-[#b8903a] mx-auto mb-10"></div>
+          <p className="text-[#5a5a5a] text-sm leading-loose mb-10">
+            土曜・日曜の週2回、西宮市立中央体育館 武道場で稽古しています。<br />
+            詳しい日程はこちらからご確認ください。
           </p>
+          <Link
+            href="/schedule"
+            className="inline-block border border-[#1c2333] hover:bg-[#1c2333] text-[#1c1c1c] hover:text-white px-10 py-4 tracking-widest text-sm transition-colors"
+          >
+            稽古日程を見る
+          </Link>
         </div>
       </section>
 
@@ -138,7 +123,7 @@ export default function ActivityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="divide-y divide-[#e2dcd2]">
               {[
-                { en: "ADDRESS", ja: "稽古場所", val: "西宮市立中央体育館 武道場" },
+                { en: "ADDRESS", ja: "稽古場所", val: "西宮市立中央体育館 武道場（中央体育館に併設の武道館です）" },
                 { en: "STATION", ja: "最寄り駅", val: "阪急西宮北口駅 徒歩約20分 / JR西宮駅 徒歩約20分" },
                 { en: "PARKING", ja: "駐車場", val: "詳細はお問い合わせください" },
               ].map((item) => (
@@ -148,10 +133,17 @@ export default function ActivityPage() {
                 </div>
               ))}
             </div>
-            <div className="relative aspect-video bg-[#e2dcd2] overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-[9px] tracking-[0.2em] text-[#b8903a]">MAP — 要差替え</p>
-              </div>
+            <div className="relative aspect-video overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13113.099749467692!2d135.33729151560235!3d34.7486664211349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f251b147ef67%3A0x5ad1339aad3fbee9!2z6KW_5a6u5biC56uL5Lit5aSu5L2T6IKy6aSo!5e0!3m2!1sja!2sjp!4v1775135117167!5m2!1sja!2sjp"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full"
+              />
             </div>
           </div>
         </div>

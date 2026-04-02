@@ -43,6 +43,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 活動報告リンク */}
+      <section className="bg-white py-16 border-t border-[#e2dcd2]">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-[10px] tracking-[0.35em] text-[#b8903a] mb-4">REPORTS</p>
+          <h2 className="text-2xl md:text-3xl font-medium text-[#1c1c1c] tracking-wider mb-6">
+            活動報告
+          </h2>
+          <div className="w-8 h-px bg-[#b8903a] mx-auto mb-8"></div>
+          <p className="text-[#5a5a5a] text-sm leading-loose mb-8">
+            稽古の様子や同好会のお知らせを随時更新しています。
+          </p>
+          <Link
+            href="/posts"
+            className="inline-block border border-[#b8903a] hover:bg-[#b8903a] text-[#b8903a] hover:text-white px-10 py-4 tracking-widest text-sm transition-colors"
+          >
+            活動報告を見る
+          </Link>
+        </div>
+      </section>
+
       {/* Veteran feature — ターゲットへの最強メッセージ */}
       <section className="bg-[#faf8f5] py-24">
         <div className="max-w-6xl mx-auto px-6">
@@ -161,14 +181,6 @@ export default function Home() {
           <div className="w-8 h-px bg-[#b8903a] mx-auto mb-12"></div>
           <div className="border border-[#e2dcd2] divide-y divide-[#e2dcd2] text-left mb-10">
             <div className="flex items-baseline px-8 py-6">
-              <span className="text-[9px] tracking-[0.2em] text-[#b8903a] w-32 flex-shrink-0">DAY / TIME</span>
-              <span className="text-[#1c1c1c] text-sm leading-loose">
-                土曜日 13:00 – 15:00<br />
-                日曜日 9:00 – 11:00<br />
-                <span className="text-[#5a5a5a] text-xs">月2〜3回開催。日程は変更になる場合があります。</span>
-              </span>
-            </div>
-            <div className="flex items-baseline px-8 py-6">
               <span className="text-[9px] tracking-[0.2em] text-[#b8903a] w-32 flex-shrink-0">VENUE</span>
               <span className="text-[#1c1c1c] text-sm">
                 西宮市立中央体育館 武道場<br />
@@ -177,10 +189,10 @@ export default function Home() {
             </div>
           </div>
           <Link
-            href="/activity"
+            href="/schedule"
             className="inline-block border border-[#1c2333] hover:bg-[#1c2333] text-[#1c1c1c] hover:text-white px-10 py-4 tracking-widest text-sm transition-colors"
           >
-            活動詳細を見る
+            稽古日程を見る
           </Link>
         </div>
       </section>
